@@ -5,6 +5,9 @@
     },
     "production": {
       "db": "http://USER:PASSWORD@DBHOST:5984/canape"
+    },
+    "test": {
+      "db": "http://USER:PASSWORD@DBHOST:5984/canape"
     }
   }
 }

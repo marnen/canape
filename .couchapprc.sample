@@ -1,0 +1,10 @@
+{
+  "env": {
+    "default": {
+      "db": "http://USER:PASSWORD@localhost:5984/canape"
+    },
+    "production": {
+      "db": "http://USER:PASSWORD@DBHOST:5984/canape"
+    }
+  }
+}

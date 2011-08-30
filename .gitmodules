@@ -1,0 +1,3 @@
+[submodule "couchapp-cucumber"]
+	path = couchapp-cucumber
+	url = git://github.com/mrtazz/couchapp-cucumber.git

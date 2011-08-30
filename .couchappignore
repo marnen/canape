@@ -3,5 +3,7 @@
   "Gemfile",
   "Gemfile.lock",
   "features*",
-  "config*"
+  "config*",
+  "README*",
+  "LICENSE"
 ]

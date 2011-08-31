@@ -6,6 +6,6 @@
   "^config",
   "^README\\.",
   "^LICENSE$",
-  "\\.komodoproject$",
+  "^.*\\.komodoproject$",
   "^\\."
 ]

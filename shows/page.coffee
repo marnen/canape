@@ -1,9 +1,6 @@
+# !code vendor/milk.coffee
 (doc, req) ->
-  body: """
-    <html>
-      <head>
-        <title>#{doc.title}</title>
-      </head>
-      <body>#{doc.content}</body>
-    </html>
-  """
+  `
+    // !json templates.page
+  `
+  {body: Milk.render(templates.page, doc)}

@@ -9,5 +9,6 @@ Feature: Display pages
     Then I should see "<content>" with title "<title>"
     
     Examples:
-      | slug    | title    | content                  |
-      | welcome | Welcome! | This is my welcome page. |
+      | slug           | title             | content                         |
+      | welcome        | Welcome!          | This is my welcome page.        |
+      | angle-brackets | Angle <> Brackets | This page has <angle brackets>. |

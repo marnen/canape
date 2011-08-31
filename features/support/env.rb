@@ -17,7 +17,7 @@ module WithinHelpers
 end
 World(WithinHelpers)
 
-Capybara.default_driver = :selenium
+# Capybara.default_driver = :selenium
 Capybara.app_host = "http://#{env['host']}:#{env['port']}/#{env['database']}/_design/#{appname}/_rewrite"
 World(Capybara)
 

@@ -3,6 +3,7 @@ source "http://rubygems.org"
 group :test do
   gem 'cucumber'
   gem 'capybara'
+  gem 'capybara-mechanize'
   gem 'rest-client'
   gem 'guid', '0.1.1'
   gem 'yajl-ruby', '0.7.8'

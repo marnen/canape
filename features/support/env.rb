@@ -1,6 +1,7 @@
 require 'capybara'
 require 'capybara/dsl'
 require 'capybara/cucumber'
+require 'capybara/mechanize/cucumber'
 require 'yaml'
 require 'ruby-debug'
 require 'rspec'
@@ -18,6 +19,7 @@ end
 World(WithinHelpers)
 
 # Capybara.default_driver = :selenium
+Capybara.default_driver = :mechanize
 Capybara.app_host = "http://#{env['host']}:#{env['port']}/#{env['database']}/_design/#{appname}/_rewrite"
 World(Capybara)
 

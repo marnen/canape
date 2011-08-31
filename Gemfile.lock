@@ -1,6 +1,10 @@
 GEM
   remote: http://rubygems.org/
   specs:
+    ZenTest (4.6.2)
+    autotest (4.4.6)
+      ZenTest (>= 4.4.1)
+    autotest-growl (0.2.9)
     builder (3.0.0)
     capybara (0.4.0)
       celerity (>= 0.7.9)
@@ -56,6 +60,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  autotest
+  autotest-growl
   capybara
   cucumber
   guid (= 0.1.1)

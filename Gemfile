@@ -7,4 +7,6 @@ group :test do
   gem 'guid', '0.1.1'
   gem 'yajl-ruby', '0.7.8'
   gem 'launchy'
+  gem 'autotest'
+  gem 'autotest-growl'
 end

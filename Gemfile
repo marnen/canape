@@ -10,4 +10,5 @@ group :test do
   gem 'autotest'
   gem 'autotest-growl'
   gem 'ruby-debug19'
+  gem 'rspec'
 end

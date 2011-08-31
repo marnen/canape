@@ -3,6 +3,7 @@ require 'capybara/dsl'
 require 'capybara/cucumber'
 require 'yaml'
 require 'ruby-debug'
+require 'rspec'
 require File.join File.dirname(__FILE__), 'couchdb_helpers'
 require File.join File.dirname(__FILE__), 'couchdb_world'
 

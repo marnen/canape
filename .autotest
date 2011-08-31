@@ -4,5 +4,5 @@ require 'autotest/growl'
 Autotest.add_hook :initialize do |at|
   %w{rerun.txt rspec.html features.html .komodotools}.each {|exception| at.add_exception(exception)}
   [%r{^\.git}, %r{\.komodoproject$}, /~$/, /^capybara-.*\.html$/].each {|exception| at.add_exception(exception)}
-  at.testlib = 'couchapp push test && rake test:features'
+  at.testlib = 'rake'
 end

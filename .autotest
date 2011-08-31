@@ -1,0 +1,8 @@
+require 'autotest/restart'
+require 'autotest/growl'
+
+Autotest.add_hook :initialize do |at|
+  %w{.git tmp log rerun.txt rspec.html features.html}.each {|exception| at.add_exception(exception)}
+  at.add_exception /\.komodoproject$/
+  at.testlib = 'rake test:features'
+end

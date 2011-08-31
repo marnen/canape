@@ -43,7 +43,7 @@ class CouchDBHelper
     docs = Yajl::Parser.new.parse(@couch.get("/#{dbname}/_all_docs").body)["rows"]
     if docs
       docs.each do |d|
-        unless d["id"] == "_design/#{appname}"
+        unless d["id"] == "_design/#{@appname}"
           @couch.delete("/#{dbname}/#{d['id']}?rev=#{d['value']['rev']}")
         end
       end

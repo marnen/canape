@@ -16,6 +16,9 @@ GEM
       rack-test (>= 0.5.4)
       selenium-webdriver (>= 0.0.27)
       xpath (~> 0.1.2)
+    capybara-mechanize (0.2.7)
+      capybara (~> 0.4.0)
+      mechanize (~> 1.0.0)
     celerity (0.8.6)
     childprocess (0.1.6)
       ffi (~> 0.6.3)
@@ -41,6 +44,8 @@ GEM
       rake (>= 0.8.1)
     linecache19 (0.5.12)
       ruby_core_source (>= 0.1.4)
+    mechanize (1.0.0)
+      nokogiri (>= 1.2.1)
     mime-types (1.16)
     nokogiri (1.4.4)
     rack (1.2.1)
@@ -85,6 +90,7 @@ DEPENDENCIES
   autotest
   autotest-growl
   capybara
+  capybara-mechanize
   cucumber
   guid (= 0.1.1)
   launchy

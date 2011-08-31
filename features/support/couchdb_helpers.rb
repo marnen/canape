@@ -4,9 +4,10 @@ require File.join File.dirname(__FILE__), 'couchdb_api'
 
 class CouchDBHelper
 
-  def initialize(host, port, admin, password)
+  def initialize(host, port, admin, password, appname = 'couchapp')
     @couch = CouchDBApi::Server.new(host, port, "", {:user => admin,
                                                      :password => password})
+    @appname = appname
   end
 
   def signup_user(authdb, username = "", password = "")
@@ -42,7 +43,7 @@ class CouchDBHelper
     docs = Yajl::Parser.new.parse(@couch.get("/#{dbname}/_all_docs").body)["rows"]
     if docs
       docs.each do |d|
-        unless d["id"] == "_design/couchapp"
+        unless d["id"] == "_design/#{appname}"
           @couch.delete("/#{dbname}/#{d['id']}?rev=#{d['value']['rev']}")
         end
       end

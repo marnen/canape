@@ -26,18 +26,18 @@ World(CouchDBWorld)
 
 # change auth db before testing
 Before do
-  helper = CouchDBHelper.new(env["host"], env["port"], env["admin"], env["password"])
+  helper = CouchDBHelper.new(env["host"], env["port"], env["admin"], env["password"], appname)
   helper.change_auth_db(env["authdb"])
 end
 
 Before "@withuser" do
-  helper = CouchDBHelper.new(env["host"], env["port"], env["admin"], env["password"])
+  helper = CouchDBHelper.new(env["host"], env["port"], env["admin"], env["password"], appname)
   helper.signup_user(env["authdb"], "User", "secret")
 end
 
 # cleanup CouchDB after scenarios
 After do
-  helper = CouchDBHelper.new(env["host"], env["port"], env["admin"], env["password"])
+  helper = CouchDBHelper.new(env["host"], env["port"], env["admin"], env["password"], appname)
   helper.change_auth_db
   helper.delete_db(env["authdb"])
   helper.clear_db(env["database"])

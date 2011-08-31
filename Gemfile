@@ -9,4 +9,5 @@ group :test do
   gem 'launchy'
   gem 'autotest'
   gem 'autotest-growl'
+  gem 'ruby-debug19'
 end

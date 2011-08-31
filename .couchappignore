@@ -1,9 +1,11 @@
 [
-  "Rakefile",
-  "Gemfile",
-  "Gemfile.lock",
-  "features*",
-  "config*",
-  "README*",
-  "LICENSE"
+  "^Rakefile$",
+  "^Gemfile$",
+  "^Gemfile\\.lock$",
+  "^features",
+  "^config",
+  "^README\\.",
+  "^LICENSE$",
+  "\\.komodoproject$",
+  "^\\."
 ]

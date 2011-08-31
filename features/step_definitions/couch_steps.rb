@@ -6,10 +6,10 @@ Given /^a page exists with ([^\s:]+: "[^"]*"(?:, (?:[^\s:]+: "[^"]*"))*)$/ do |f
     k, v = field.split ': '
     v.chomp!(?").gsub!(%r{\A"}, '')
     if k == 'slug'
-      k = 'id'
+      k = '_id'
     end
     record[k] = v
   end
   
-  couch.put "#{database}/#{record['id']}", Yajl::Encoder.encode(record)
+  couch.put "#{database}/#{record['_id']}", Yajl::Encoder.encode(record)
 end

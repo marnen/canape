@@ -2,16 +2,24 @@ require File.join File.dirname(__FILE__), 'couchdb_api'
 
 module CouchDBWorld
   class << self
-    attr_reader :couch
+    attr_reader :couch, :database
     
     def set_db(options)
-      defaults = {:host => nil, :port => nil, :admin => nil, :password => nil}
+      defaults = {:host => nil, :port => nil, :admin => nil, :password => nil, :database => nil}
       options = defaults.merge options
-      @couch = CouchDBHelper.new options[:host], options[:port], options[:admin], options[:password]
-    end
-    
-    def method_missing(name, *args, &block)
-      @couch.send name, args, block
+      @couch = CouchDBApi::Server.new options[:host], options[:port], "", {:user => options[:admin], :password => options[:password]}
+      @database = options[:database]
+      if @database !~ %r{\A/}
+        @database = "/#{@database}"
+      end
     end
   end
- end
+  
+  def couch
+    CouchDBWorld.couch
+  end
+  
+  def database
+    CouchDBWorld.database
+  end
+end

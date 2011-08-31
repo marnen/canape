@@ -2,6 +2,7 @@ require 'capybara'
 require 'capybara/dsl'
 require 'capybara/cucumber'
 require 'yaml'
+require 'ruby-debug'
 require File.join File.dirname(__FILE__), 'couchdb_helpers'
 require File.join File.dirname(__FILE__), 'couchdb_world'
 
@@ -18,7 +19,7 @@ Capybara.default_driver = :selenium
 Capybara.app_host = "http://#{env['host']}:#{env['port']}/#{env['database']}/_design/couchapp/_rewrite"
 World(Capybara)
 
-CouchDBWorld.set_db host: env['host'], port: env['port'], admin: env['admin'], password: env['password']
+CouchDBWorld.set_db host: env['host'], port: env['port'], database: env['database'], admin: env['admin'], password: env['password']
 World(CouchDBWorld)
 
 # change auth db before testing

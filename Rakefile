@@ -9,8 +9,7 @@ task :default => ['test:deploy', 'test:features']
 namespace :test do
 
   task :deploy do
-    c = CONFIG["test"]
-    sh "couchapp push http://#{c['admin']}:#{c['password']}@#{c['host']}:#{c['port']}/#{c['database']}"
+    sh 'couchapp push test'
   end
 
   Cucumber::Rake::Task.new(:features) do |t|

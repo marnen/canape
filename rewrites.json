@@ -1,0 +1,6 @@
+[
+  {
+    "from": "/:page",
+    "to": "/_show/page/:page"
+  }
+]
